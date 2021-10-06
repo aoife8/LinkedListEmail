@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/LinkedListEmail.iml" filepath="$PROJECT_DIR$/.idea/LinkedListEmail.iml" />
+      <module fileurl="file://$PROJECT_DIR$/act/act.iml" filepath="$PROJECT_DIR$/act/act.iml" />
     </modules>
   </component>
 </project>
