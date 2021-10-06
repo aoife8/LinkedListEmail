@@ -1,19 +1,12 @@
 package activity;
 
-public class Gmail {
-    private String sender;
+public class Compose {
+
     private Emails email;
     private String subject;
     private String message;
-    private Emails attachment;
+    private MyLinkedList<String> attachment;
 
-    public String getSender() {
-        return sender;
-    }
-
-    public void setSender(String sender) {
-        this.sender = sender;
-    }
 
     public Emails getEmail() {
         return email;
@@ -39,17 +32,21 @@ public class Gmail {
         this.message = message;
     }
 
-    public Emails getAttachment() {
+    public MyLinkedList<String> getAttachment() {
         return attachment;
     }
 
-    public void setAttachment(Emails attachment) {
+    public void setAttachment(MyLinkedList<String> attachment) {
         this.attachment = attachment;
     }
 
     @Override
     public String toString() {
-        return "Sender: " + sender + "\nRecepient: " + email + "\nSubject: " + subject + "\nMessage: "+message + "\nAttachment: " + attachment;
+        return "-------------------------------------------------" +
+                "\nRecipient: " + email +
+                "\nSubject: Re: " + subject +
+                "\nMessage: "+ message +
+                "\nAttachments: \n" + attachment +
+                "\n-------------------------------------------------";
     }
 }
-

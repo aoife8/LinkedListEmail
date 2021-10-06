@@ -30,12 +30,12 @@ public class MyLinkedList<E> implements MyList<E> {
         size++;
     }
     @Override
-    public E getElement(E data) {
+    public E getElement(Object data) {
         E element = null;
         Node<E> current = head;
         while (current != null)
         {
-            if (current.getData().toString().equals((data).toString()))
+            if (current.getData().toString().contains((data).toString()))
                 element =  current.getData();
             current = current.getNext();
         }
@@ -71,11 +71,12 @@ public class MyLinkedList<E> implements MyList<E> {
     }
 
 
+
     @Override
-    public boolean search(E data) {
+    public boolean search(Object data) {
         Node<E> node = head;
         while (node != null) {
-            if (node.getData().toString().equals((data).toString())) {
+            if (node.getData().toString().contains((data).toString())) {
                 return true;
             }
             node = node.getNext();
