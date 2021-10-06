@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/LinkedListEmail.iml" filepath="$PROJECT_DIR$/.idea/LinkedListEmail.iml" />
       <module fileurl="file://$PROJECT_DIR$/act/act.iml" filepath="$PROJECT_DIR$/act/act.iml" />
+      <module fileurl="file://$PROJECT_DIR$/inspo/inspo.iml" filepath="$PROJECT_DIR$/inspo/inspo.iml" />
     </modules>
   </component>
 </project>
