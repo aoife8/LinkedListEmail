@@ -1,6 +1,4 @@
 package activity;
-
-import java.util.Objects;
 import java.util.Scanner;
 
 
@@ -11,11 +9,11 @@ public class Main {
     static Gmail gmail4 = new Gmail();
     static Gmail gmail5 = new Gmail();
 
-    static Emails a = new Emails();
-    static Emails b = new Emails();
-    static Emails c = new Emails();
-    static Emails d = new Emails();
-    static Emails e = new Emails();
+    static Gmail a = new Gmail();
+    static Gmail b = new Gmail();
+    static Gmail c = new Gmail();
+    static Gmail d = new Gmail();
+    static Gmail e = new Gmail();
 
 
 
@@ -92,7 +90,7 @@ public class Main {
         System.out.println("How many emails are there?: " + gmail.getSize());
     }
 
-    private static void settingEmail(MyLinkedList<Emails> email){
+    private static void settingEmail(MyLinkedList<Gmail> email){
         a.setEmail("apple@gmail.com");
         b.setEmail("banana@gmail.com");
         c.setEmail("cake@gmail.com");
@@ -233,9 +231,9 @@ public class Main {
         System.out.println("Size ni email: " + email.getSize());
         System.out.println("---------------------------------------------");
         System.out.println();
-        System.out.println("Lahat ng Sent:");
+        System.out.println("All sent mails:");
         System.out.println(sent);
-        System.out.println("Ilang sent na meron?: " + sent.getSize());
+        System.out.println("How many emails are sent?: " + sent.getSize());
         System.out.println();
     }
 /*

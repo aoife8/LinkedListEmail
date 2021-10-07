@@ -5,6 +5,7 @@ import java.util.Objects;
 
 public class Gmail {
     private String sender;
+    private String email;
     private MyLinkedList<String> recipient;
     private String subject;
     private String message;
@@ -16,6 +17,14 @@ public class Gmail {
 
     public void setSender(String sender) {
         this.sender = sender;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public MyLinkedList<String> getRecipient() {
