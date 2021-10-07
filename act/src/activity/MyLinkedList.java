@@ -30,7 +30,7 @@ public class MyLinkedList<E> implements MyList<E> {
         size++;
     }
     @Override
-    public E getElement(Object data) {
+    public E getElement(E data) {
         E element = null;
         Node<E> current = head;
         while (current != null)
@@ -50,7 +50,7 @@ public class MyLinkedList<E> implements MyList<E> {
     }
 
     @Override
-    public boolean delete(E data) {
+    public boolean delete(Object data) {
         Node<E> current = head;
         if(head.getData().equals(data)){
             head = head.getNext();
@@ -89,11 +89,8 @@ public class MyLinkedList<E> implements MyList<E> {
         for (int i = 0; i < size; i++) {
             result.append(current.getData());
             current = current.getNext();
-            if (current != null) {
-                result.append("\n");
-            } else {
-                result.append("\n");
-            }
+            if (current != null)
+                result.append(", ");
         }
         return result.toString();
     }

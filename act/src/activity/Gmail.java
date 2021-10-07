@@ -1,11 +1,14 @@
 package activity;
 
+import java.io.File;
+import java.util.Objects;
+
 public class Gmail {
     private String sender;
-    private Emails email;
+    private MyLinkedList<String> recipient;
     private String subject;
     private String message;
-    private Emails attachment;
+    private MyLinkedList<File> attachment;
 
     public String getSender() {
         return sender;
@@ -15,12 +18,12 @@ public class Gmail {
         this.sender = sender;
     }
 
-    public Emails getEmail() {
-        return email;
+    public MyLinkedList<String> getRecipient() {
+        return recipient;
     }
 
-    public void setEmail(Emails email) {
-        this.email = email;
+    public void setRecipient(MyLinkedList<String> recipient) {
+        this.recipient = recipient;
     }
 
     public String getSubject() {
@@ -39,12 +42,30 @@ public class Gmail {
         this.message = message;
     }
 
-    public Emails getAttachment() {
+    public MyLinkedList<File> getAttachment() {
         return attachment;
     }
 
-    public void setAttachment(Emails attachment) {
+    public void setAttachment(MyLinkedList<File> attachment) {
         this.attachment = attachment;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+
+        if (obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        final Gmail other = (Gmail) obj;
+        if (!Objects.equals(this.sender, other.sender)) {
+            return false;
+        }
+
+        return true;
     }
 
     @Override
@@ -52,4 +73,3 @@ public class Gmail {
         return "Sender: " + sender + "\nRecepient: " + email + "\nSubject: " + subject + "\nMessage: "+message + "\nAttachment: " + attachment;
     }
 }
-
