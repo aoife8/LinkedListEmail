@@ -5,11 +5,20 @@ import java.util.Objects;
 
 public class Gmail {
     private String sender;
-    private String email;
-    private MyLinkedList<String> recipient;
+    private MyList<String> recipient;
     private String subject;
     private String message;
-    private MyLinkedList<File> attachment;
+    private MyList<File> attachment;
+    public Gmail(){
+
+    }
+    public Gmail(String sender, MyList<String> recipient, String subject, String message, MyList<File> attachment) {
+        this.sender = sender;
+        this.recipient = recipient;
+        this.subject = subject;
+        this.message = message;
+        this.attachment = attachment;
+    }
 
     public String getSender() {
         return sender;
@@ -19,19 +28,11 @@ public class Gmail {
         this.sender = sender;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public MyLinkedList<String> getRecipient() {
+    public MyList<String> getRecipient() {
         return recipient;
     }
 
-    public void setRecipient(MyLinkedList<String> recipient) {
+    public void setRecipient(MyList<String> recipient) {
         this.recipient = recipient;
     }
 
@@ -51,11 +52,11 @@ public class Gmail {
         this.message = message;
     }
 
-    public MyLinkedList<File> getAttachment() {
+    public MyList<File> getAttachment() {
         return attachment;
     }
 
-    public void setAttachment(MyLinkedList<File> attachment) {
+    public void setAttachment(MyList<File> attachment) {
         this.attachment = attachment;
     }
 
@@ -64,21 +65,24 @@ public class Gmail {
         if (obj == null) {
             return false;
         }
-
         if (obj.getClass() != this.getClass()) {
             return false;
         }
-
         final Gmail other = (Gmail) obj;
         if (!Objects.equals(this.sender, other.sender)) {
             return false;
         }
-
         return true;
     }
 
     @Override
     public String toString() {
-        return "Sender: " + sender + "\nRecepient: " + email + "\nSubject: " + subject + "\nMessage: "+message + "\nAttachment: " + attachment;
+        return "----------------------------------"+
+                "\nSender: " + sender +
+                "\nRecepient: " + recipient +
+                "\nSubject: " + subject +
+                "\nMessage: "+message +
+                "\nAttachment: " + attachment+
+                "\n----------------------------------";
     }
 }
