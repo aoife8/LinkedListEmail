@@ -30,7 +30,7 @@ public class Main {
         Scanner keyboard = new Scanner(System.in);
         System.out.println("EMAIL MENU");
         System.out.println("-----------");
-        int i=0;
+        int i;
         do{
             System.out.println("1. inbox");
             System.out.println("2. compose");
@@ -46,6 +46,8 @@ public class Main {
 //                    break;
                 case 4: sent();
                     break;
+                default:System.err.println("Invalid input.");
+                continue;
             }
         }while (i!=5);
     }
@@ -95,7 +97,7 @@ public class Main {
     }
     private static void settingGmail(MyList<Gmail> gmail){
         MyList<String> reci = new MyLinkedList<>();
-        reci.add("violet@gmail.com");
+        reci.add("anonymous@gmail.com");
         //1st email
         MyLinkedList<File> attach1 = new MyLinkedList<>(); //list of attachments
         attach1.add(new File("receipt.txt"));
@@ -113,9 +115,9 @@ public class Main {
 
         //create new Gmail named gmail1
         gmail2.setRecipient(reci);
-        gmail2.setSender("andrews@gmail.com");
-        gmail2.setSubject("Are you ready?");
-        gmail2.setMessage("I can't wait to marry you.");
+        gmail2.setSender("violet@gmail.com");
+        gmail2.setSubject("Surprise!");
+        gmail2.setMessage("We are getting married!.");
         gmail2.setAttachment(attach2);
 
         //3rd email
@@ -124,9 +126,9 @@ public class Main {
 
         //create new Gmail named gmail1
         gmail3.setRecipient(reci);
-        gmail3.setSender("violet@gmail.com");
-        gmail3.setSubject("I love it!");
-        gmail3.setMessage("Check the photos I sent you.");
+        gmail3.setSender("andrews@gmail.com");
+        gmail3.setSubject("Urgent!");
+        gmail3.setMessage("Check the photos I sent you. Cool right?");
         gmail3.setAttachment(attach3);
 
 
@@ -172,7 +174,7 @@ public class Main {
     public static void setListOfSubjects(MyList<String> listOfSubjects){
 
     }
-    public void compose(){
+    public void compose() {
 
         MyLinkedList<String> recipient = new MyLinkedList<>();
         String subject = "";
@@ -182,6 +184,7 @@ public class Main {
 
         System.out.println("CREATE NEW EMAIL");
         System.out.println("----------------");
+
 
         for (int i = 0; i < 5; i++){
             if (i == 1){
@@ -210,18 +213,19 @@ public class Main {
                 message = keyboard.nextLine();
             }
 
-        }
-        sentMail = new Gmail(sender,recipient,subject,message,attachment);
 
-        sent.add(sentMail);
-        System.out.println();
-        System.out.println("This is the contents of the newly made email:");
-        System.out.println("---------------------------------------------");
-        System.out.println(sentMail);
-        System.out.println("---------------------------------------------");
-        System.out.println(sent);
-        System.out.println(sent.getSize());
-    }
+            }
+            sentMail = new Gmail(sender, recipient, subject, message, attachment);
+
+            sent.add(sentMail);
+            System.out.println();
+            System.out.println("This is the contents of the newly made email:");
+            System.out.println("---------------------------------------------");
+            System.out.println(sentMail);
+            System.out.println("---------------------------------------------");
+            System.out.println(sent);
+            System.out.println(sent.getSize());
+        }
 
     public void sent() {
         System.out.println(sent.getElement(sentMail).getSubject());
